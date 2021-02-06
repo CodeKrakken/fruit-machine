@@ -21,4 +21,9 @@ describe('machine', function() {
     expect(machine.colours[2]).toEqual('green')
     expect(machine.colours[3]).toEqual('yellow')
   })
+
+  it('populates results array when requested', function() {
+    machine.spin
+    expect(machine.result).toBeDefined()
+  })
 })
