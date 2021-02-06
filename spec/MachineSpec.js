@@ -37,8 +37,13 @@ describe('machine', function() {
     expect(machine.outcome()).toEqual('Halfpot!')
   })
 
+  it('recognises a quarterpot', function() {
+    machine.result = ['black, white, white, black']
+    expect(machine.outcome()).toEqual('Quarterpot!')
+  })
+
   it('recognises a loss', function() {
-    machine.result = ['black', 'white', 'black', 'black']
+    machine.result = ['black', 'white', 'black', 'green']
     expect(machine.outcome()).toEqual('You lose!')
   })
 
