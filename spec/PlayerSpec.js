@@ -57,5 +57,12 @@ describe('player', function() {
     expect(player.wallet).toEqual(50)
   })
 
+  it('can win the quarterpot', function() {
+    spyOn(machine, 'play').and.returnValue('Quarterpot!')
+    player.play()
+    expect(player.wallet).toEqual(5)
+    expect(machine.float).toEqual(96)
+  })
+
 })
 
