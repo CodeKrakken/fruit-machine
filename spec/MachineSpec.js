@@ -10,4 +10,8 @@ describe('machine', function() {
   it('can be initialized', function() {
     expect(machine).toBeDefined()
   })
+
+  it('has an array of colours', function() {
+    expect(machine.colours).toBeDefined()
+  })
 })
