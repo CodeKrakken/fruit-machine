@@ -38,14 +38,12 @@ describe('player', function() {
   })
 
   it('gets charged for playing', function() {
-    // machine.float = 100
     player.play()
     expect(player.wallet).toEqual(0)
     expect(machine.float).toEqual(101)
   })
 
   it('can win the jackpot', function() {
-    // machine.float = 100
     spyOn(machine, 'play').and.returnValue('Jackpot!')
     player.play()
     expect(machine.float).toEqual(0)
