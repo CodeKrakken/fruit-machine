@@ -6,7 +6,9 @@ let machine
 
 describe('player', function() {
   beforeEach(function() {
-    machine = jasmine.createSpyObj('machine', ['play'])
+    machine = {
+      play: function() {}
+    }
     player = new Player(machine)
     player.wallet = 1
   })
@@ -24,6 +26,7 @@ describe('player', function() {
   })
 
   it('can play a game', function() {
+    spyOn(machine, 'play')
     player.play()
     expect(machine.play).toHaveBeenCalled()
   })
@@ -38,6 +41,14 @@ describe('player', function() {
     player.play()
     expect(player.wallet).toEqual(0)
     expect(machine.float).toEqual(101)
+  })
+
+  it('can win the jackpot', function() {
+    machine.float = 100
+    spyOn(machine, 'play').and.returnValue('You win!')
+    player.play()
+    expect(machine.float).toEqual(0)
+    expect(player.wallet).toEqual(101)
   })
 
 })
