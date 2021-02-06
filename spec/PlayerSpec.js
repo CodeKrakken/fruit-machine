@@ -45,7 +45,7 @@ describe('player', function() {
 
   it('can win the jackpot', function() {
     machine.float = 100
-    spyOn(machine, 'play').and.returnValue('You win!')
+    spyOn(machine, 'play').and.returnValue('Jackpot!')
     player.play()
     expect(machine.float).toEqual(0)
     expect(player.wallet).toEqual(101)

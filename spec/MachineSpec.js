@@ -27,9 +27,14 @@ describe('machine', function() {
     expect(machine.result.length).toEqual(4)
   })
 
-  it('recognises a win', function() {
+  it('recognises a jackpot', function() {
     machine.result = ['black', 'black', 'black', 'black']
-    expect(machine.outcome()).toEqual('You win!')
+    expect(machine.outcome()).toEqual('Jackpot!')
+  })
+
+  it('recognises a halfpot', function() {
+    machine.result = ['black', 'white', 'yellow', 'green']
+    expect(machine.outcome()).toEqual('Halfpot!')
   })
 
   it('recognises a loss', function() {
