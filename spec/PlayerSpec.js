@@ -19,8 +19,13 @@ describe('player', function() {
     expect(player.machine).toBeDefined()
   })
 
-  it('can play the machine', function() {
+  it('has a play function', function() {
     expect(player.play).toBeDefined()
+  })
+
+  it('can play a game', function() {
+    player.play()
+    expect(machine.play).toHaveBeenCalled()
   })
 
   it('cannot play the machine with insufficient money', function() {
