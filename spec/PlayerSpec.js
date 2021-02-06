@@ -33,4 +33,11 @@ describe('player', function() {
     expect(player.play()).toEqual('Insert Coin.')
   })
 
+  it('gets charged for playing', function() {
+    machine.float = 100
+    player.play()
+    expect(player.wallet).toEqual(0)
+    expect(machine.float).toEqual(101)
+  })
+
 })

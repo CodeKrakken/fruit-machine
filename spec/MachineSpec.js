@@ -40,4 +40,5 @@ describe('machine', function() {
   it('has a float', function() {
     expect(machine.float).toEqual(100)
   })
+
 })
