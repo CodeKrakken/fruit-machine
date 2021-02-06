@@ -19,4 +19,9 @@ describe('player', function() {
   it('cannot play the machine with insufficient money', function() {
     expect(player.play()).toEqual('Insert Coin.')
   })
+
+  it('can play if wallet has money', function() {
+    player.wallet = 1
+    expect(player.play()).toEqual('Spinning reels.')
+  })
 })
