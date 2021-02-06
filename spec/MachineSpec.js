@@ -23,7 +23,7 @@ describe('machine', function() {
   })
 
   it('populates results array when requested', function() {
-    machine.spin
-    expect(machine.result).toBeDefined()
+    machine.spin()
+    expect(machine.result.length).toEqual(4)
   })
 })
