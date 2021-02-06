@@ -36,4 +36,8 @@ describe('machine', function() {
     machine.result = ['black', 'white', 'black', 'black']
     expect(machine.outcome()).toEqual('You lose!')
   })
+
+  it('has a float', function() {
+    expect(machine.float).toEqual(100)
+  })
 })
