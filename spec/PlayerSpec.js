@@ -66,7 +66,7 @@ describe('player', function() {
 
   it('gains play credits if machine float cannot cover winnings', function() {
     spyOn(machine, 'play').and.returnValue('Quarterpot!')
-    machine.float = 4
+    machine.float = 3
     player.play()
     expect(player.credit).toEqual(1)
     expect(machine.float).toEqual(0)
