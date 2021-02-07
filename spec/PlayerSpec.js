@@ -72,5 +72,12 @@ describe('player', function() {
     expect(machine.float).toEqual(0)
   })
 
+  it('uses credits before money when playing the game', function() {
+    player.wallet = 0
+    player.credit = 1
+    player.play()
+    expect(player.credit).toEqual(0)
+  })
+
 })
 
